@@ -50,30 +50,19 @@ function JobList() {
         <div className="flex flex-wrap gap-2">
           {selectedTags.map((tag, index) => (
             <div key={index} className="flex">
-              <div className="bg-background text-primary p-2 rounded-l-md text-sm sm:text-base">{tag}</div>
+              <div className="bg-background text-primary sm:p-2 p-1 sm:px-4 sm:py-1 rounded-l-md text-xs sm:text-sm font-semibold flex items-center">{tag}</div>
               <div 
-                className="flex items-center bg-primary text-white p-2 rounded-r-md cursor-pointer"
+                className="flex items-center bg-primary text-white p-2 rounded-r-md cursor-pointer hover:bg-black hover:text-white font-semibold text-lg"
                 onClick={() => handleTagClick(tag)}
               >&times;</div>
             </div>
           ))}
         </div>
 
-      {/* <span
-            key={index}
-            className="bg-background text-primary p-3 rounded-sm flex items-center space-x-2">
-            <span>{tag}</span>
-            <div
-              onClick={() => handleTagClick(tag)}
-              className="bg-primary text-white hover:text-gray-800 h-full flex items-center justify-center cursor-pointer">
-              &times;
-            </div>
-          </span> */}
-
         {selectedTags.length > 0 && (
           <button
             onClick={clearTags}
-            className="text-sm text-primary hover:underline font-bold">
+            className="sm:text-sm text-xs text-primary hover:underline font-bold">
             Clear
           </button>
         )}
